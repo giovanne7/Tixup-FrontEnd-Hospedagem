@@ -1,4 +1,13 @@
 import axios from "axios";
+import cors from 'cors';
+
+const app = express();
+
+app.use(cors({
+  origin: 'https://tixupfrontend.vercel.app',
+  credentials: true,
+}));
+
 
 const api = axios.create({
   baseURL: "https://hospedagem-tixup-back-end.onrender.com" + "/api",
