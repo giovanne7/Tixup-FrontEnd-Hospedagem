@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL + "/api",
+  baseURL: "https://hospedagem-tixup-back-end.onrender.com" + "/api",
   withCredentials: true,
 });
 
