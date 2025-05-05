@@ -7,6 +7,14 @@ import {
 } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserData } from "../types/UserData";
+import cors from 'cors';
+
+const app = express();
+
+app.use(cors({
+  origin: 'https://tixupfrontend.vercel.app',
+  credentials: true,
+}));
 
 interface AuthContextData {
   user: UserData | null;
