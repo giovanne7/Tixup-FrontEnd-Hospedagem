@@ -24,6 +24,7 @@ import Remarketing from "./components/pages/Remarketing";
 import Collaborators from "./components/pages/Collaborators";
 import ConfigColab from "./components/dashboard/ConfigColab";
 import { EventData } from "./types/EventData";
+import cors from 'cors';
 
 function App() {
   const [showModal, setShowModal] = useState<string | null>(null);
@@ -66,6 +67,13 @@ function App() {
       alert("Falha ao fazer login");
     }
   };
+
+const app = express();
+
+app.use(cors({
+  origin: 'https://tixupfrontend.vercel.app',
+  credentials: true,
+}));
 
   const handleRegister = async (
     name: string,
